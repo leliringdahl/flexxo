@@ -4,7 +4,8 @@ import ProductCard from '../components/ProductCard'
 
 
 /*störde mig enormt mycket på att den här delen var ojämn i mallen så tog lite creative liberty och tog 3 cards per rad. */
-const HomePageSale = ({products}) => {
+const HomePageSale = ({items =[]}) => {
+
   return (
     <section className="products container-fluid">
       <div className="products-top-section d-flex justify-content-between align-items-center">
@@ -14,7 +15,7 @@ const HomePageSale = ({products}) => {
         <div className="top-section-cards">
           <div className="row row-cols-1 row-cols-md-3">
           {
-          products.map(product => <ProductCard key={product.id} product={product}/>)
+          items.map(product => <ProductCard key={product.articleNumber} item={product}/>)
           }
           </div>
         </div>        
@@ -23,7 +24,7 @@ const HomePageSale = ({products}) => {
         <div className="bottom-section-cards">
           <div className="row row-cols-1 row-cols-md-3">
           {
-          products.map(product => <ProductCard key={product.id} product={product}/>)
+            items.map(product => <ProductCard key={product.articleNumber} item={product}/>)
           }
           </div>
         </div>
